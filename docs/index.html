@@ -57,7 +57,8 @@
     }
   
   function addComment() {
-  const newComment = document.getElementById("new_comment");
+  //const newComment = document.getElementById("new_comment");
+  const newComment = document.getElementById(content);
   console.log("add comment", client.auth.user.id)
   db.collection("comments")
     .insertOne({ owner_id : client.auth.user.id, comment: newComment.value })
