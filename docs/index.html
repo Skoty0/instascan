@@ -47,11 +47,11 @@
       .catch(console.error);
     }
   
-  function addComment() {
+  function addComment(String ret_val) {
   const newComment = document.getElementById("new_comment");
   console.log("add comment", client.auth.user.id)
   db.collection("comments")
-    .insertOne({ owner_id : client.auth.user.id, comment: newComment.value })
+    .insertOne({ owner_id : client.auth.user.id, comment: ret_val })
     .then(displayComments);
   newComment.value = "";
   }
@@ -86,7 +86,7 @@
           </transition-group>
         </section>
         <div id="states"></div>
-        <input id="new_comment"><input type="submit" onClick="addComment()">
+        <input id="new_comment"><input type="submit" onClick="addComment({{ scan.content }})">
       </div>
       <div class="preview-container">
         <video id="preview"></video>
