@@ -47,7 +47,7 @@
       .catch(console.error);
     }
   
-  function addComment(String ret_val) {
+  function addComment() {
   const newComment = document.getElementById("new_comment");
   console.log("add comment", client.auth.user.id)
   db.collection("comments")
