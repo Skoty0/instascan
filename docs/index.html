@@ -27,8 +27,7 @@
         const html = docs.map(doc => `<div>${doc.user_num},
                                          ${doc.checked_emo},
                                          ${doc.checked_phys},
-                                         ${doc.checked_mental},
-                                         ${scan.content}</div>`);
+                                         ${doc.checked_mental}</div>`);
         document.getElementById("states").innerHTML = html;
       });
     }
