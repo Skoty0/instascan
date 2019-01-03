@@ -46,14 +46,14 @@
       .catch(console.error);
     }
   
-    function checkHash() {
-    const newComment = document.getElementById("is this working");
-    console.log("check hash", client.auth.user.id)
-    db.collection("comments")
-      .insertOne({ owner_id : client.auth.user.id, comment: newComment.value })
-      .then(displayComments);
-    newComment.value = "";
-    }
+  function addComment() {
+  const newComment = document.getElementById("new_comment");
+  console.log("add comment", client.auth.user.id)
+  db.collection("Players")
+    .insertOne({ owner_id : client.auth.user.id, comment: newComment.value })
+    .then(displayComments);
+  newComment.value = "";
+  }
   </script>
 
   </head>
@@ -85,7 +85,7 @@
           </transition-group>
         </section>
         <div id="states"></div>
-        <input id="check_hash"><input type="submit" onClick="checkHash()">
+        <input id="new_comment"><input type="submit" onClick="addComment()">
       <div class="preview-container">
         <video id="preview"></video>
       </div>
