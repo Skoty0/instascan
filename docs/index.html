@@ -75,11 +75,11 @@
             <li v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}</li>
           </transition-group>
         </section>
+        <div id="states"></div>
       </div>
       <div class="preview-container">
         <video id="preview"></video>
       </div>
-      <div id="states"></div>
     </div>
     <script type="text/javascript" src="app.js"></script>
   </body>
