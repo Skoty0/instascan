@@ -11,20 +11,6 @@
     
     <script type="text/javascript">  
         
-    let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-      scanner.addListener('scan', function (content) {
-        console.log(content);//here 
-      });
-    Instascan.Camera.getCameras().then(function (cameras) {
-        if (cameras.length > 0) {
-          scanner.start(cameras[0]);
-        } else {
-          console.error('No cameras found.');
-        }
-      }).catch(function (e) {
-        console.error(e);
-      });
-      
     //Eventually pull this into a file on git.
     // Initialize the App Client
     const client = stitch.Stitch.initializeDefaultAppClient("blogtutorial-trgpa");
@@ -58,13 +44,27 @@
   
   function addComment() {
   //const newComment = document.getElementById("new_comment");
-  const newComment = document.getElementById(content);
+  const newComment = document.getElementById(content);//make less constant
   console.log("add comment", client.auth.user.id)
   db.collection("comments")
     .insertOne({ owner_id : client.auth.user.id, comment: newComment.value })
     .then(displayComments);
   newComment.value = "";
-  }     
+  }
+      
+     let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      scanner.addListener('scan', function (content) {
+        console.log(content);//here 
+      });
+    Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          console.error('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
   
   </script>
 
