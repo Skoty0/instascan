@@ -55,7 +55,7 @@
      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
       scanner.addListener('scan', function (content) {
         console.log(content);//here 
-        newComment.value = content;
+        newComment.value = content.value;
         console.log(newComment.value);
         console.log("add comment", client.auth.user.id)
         db.collection("comments")
