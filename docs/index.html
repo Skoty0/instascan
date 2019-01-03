@@ -46,9 +46,9 @@
       .catch(console.error);
     }
   
-    function addComment() {
-    const newComment = document.getElementById("new_comment");
-    console.log("add comment", client.auth.user.id)
+    function checkHash(newE) {
+    const newComment = document.getElementById(newE);
+    console.log("check hash", client.auth.user.id)
     db.collection("comments")
       .insertOne({ owner_id : client.auth.user.id, comment: newComment.value })
       .then(displayComments);
@@ -79,10 +79,14 @@
             <li class="empty">No scans yet</li>
           </ul>
           <transition-group name="scans" tag="ul">
-            <li v-for="scan in scans" :key="scan.date" :title="scan.content">The result of the scan is: {{ scan.content }}</li>
+            <li v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}
+            <script>
+              if scan.content == scan.content{
+            </li>
           </transition-group>
         </section>
-        <div id="states">{{ game_scanner.content }}</div>
+        <div id="states"></div>
+        <input id="check_hash"><input type="submit" onClick="checkHash({{ scan.content }})">
       </div>
       <div class="preview-container">
         <video id="preview"></video>
