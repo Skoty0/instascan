@@ -51,7 +51,7 @@
   const newComment = document.getElementById("new_comment");
   console.log("add comment", client.auth.user.id)
   db.collection("comments")
-    .insertOne({ owner_id : client.auth.user.id, comment: ret_val })
+    .insertOne({ owner_id : client.auth.user.id, comment: newComment.value })
     .then(displayComments);
   newComment.value = "";
   }
