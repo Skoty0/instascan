@@ -7,7 +7,14 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-
+    
+    <script type="text/javascript">
+      let game_scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      scanner.addListener('scan', function (content) {
+        console.log(content);
+      });
+    </script>
+    
     <script>//Eventually pull this into a file on git.
     // Initialize the App Client
     const client = stitch.Stitch.initializeDefaultAppClient("blogtutorial-trgpa");
@@ -73,6 +80,7 @@
           </ul>
           <transition-group name="scans" tag="ul">
             <li v-for="scan in scans" :key="scan.date" :title="scan.content">The result of the scan is: {{ scan.content }}</li>
+            <li> {{ game_scanner.content }} </li>
           </transition-group>
         </section>
         <div id="states"></div>
