@@ -54,15 +54,11 @@
       
      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
       scanner.addListener('scan', function (content) {
-        console.log(content);//here 
-        newComment.value = content.value;
-        console.log(newComment.value);
+        console.log(content);
         console.log("add comment", client.auth.user.id)
         db.collection("comments")
-          //.insertOne({ owner_id : client.auth.user.id, comment: newComment.value })
           .insertOne({ owner_id : client.auth.user.id, comment: content })
           .then(displayComments);
-        newComment.value = "";//to here
       });
     Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
