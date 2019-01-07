@@ -56,7 +56,7 @@
       
     scanner.addListener('scan', function (content) {
       
-      var result = db.collection("comments").find({ _id: {content}, {_id:0, checked_phys: 1 }});
+      var result = db.collection("comments").find( _id: {content}, {_id:0, checked_phys: 1 });
       
       console.log(content);
       console.log(result, client.auth.user.id)
