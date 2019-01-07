@@ -61,10 +61,10 @@
         callback(result);
       });*/
       
-      var result = db.collection("comments").find({_id: content}, {_id:0, checked_phys: 1 }).toArray();
+      //var result = db.collection("comments").find({_id: content}, {_id:0, checked_phys: 1 }).toArray();
       //result = await result;
             
-      //var result = db.collection("comments").find({}, {}).toArray();
+      var result = db.collection("comments").find({}, {}).toArray();
       console.log(result);
       //db.collection("comments")
       //  .insertOne({ owner_id : client.auth.user.id, comment: content })
