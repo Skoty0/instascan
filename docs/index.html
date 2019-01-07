@@ -61,7 +61,7 @@
         callback(result);
       });*/
       
-      var result = db.collection("comments").find({_id: content}, {_id:0, checked_phys: 1 });
+      var result = db.collection("comments").find({_id: content}, {_id:0, checked_phys: 1 }).toArray();
       //result = await result;
             
       //var result = db.collection("comments").find({}, {}).toArray();
