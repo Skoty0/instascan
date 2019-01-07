@@ -55,7 +55,8 @@
     let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
       
     scanner.addListener('scan', function (content) {      
-      var result = db.collection("comments").find({_id: content}, {_id:0, checked_phys: 1 });      
+      var result = db.collection("comments").find({_id: content}, {_id:0, checked_phys: 1 });
+      printjson(result);
       console.log(result);
       //db.collection("comments")
       //  .insertOne({ owner_id : client.auth.user.id, comment: content })
