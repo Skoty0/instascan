@@ -55,11 +55,15 @@
     let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
       
     scanner.addListener('scan', function (content) {      
-      db.collection("comments").find({_id: content}, {_id:0, checked_phys: 1 })
+      /*db.collection("comments").find({_id: content}, {_id:0, checked_phys: 1 })
         .then(function(result) {
         console.log(result); // Use this to debug
         callback(result);
-      });
+      });*/
+      
+      var result = db.collection("comments").find({_id: content}, {_id:0, checked_phys: 1 });
+      result.then(function (value) { callback(value) });
+      
       //var result = db.collection("comments").find({}, {}).toArray();
       console.log(result);
       //db.collection("comments")
