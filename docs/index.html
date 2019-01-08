@@ -65,8 +65,7 @@
       //result = await result;
             
       //dont forget .toArray
-      var result = db.collection("comments").find({}, {});
-      console.log(result[0]);
+      var result = db.collection("comments").find({_id: content}, {});
       /*Array.result.forEach(function(player){
         console.log(player);
       });*/
