@@ -74,8 +74,11 @@
       /*Array.result.forEach(function(player){
         console.log(player);
       });*/
+      //db.collection("comments")
+      //  .insertOne({ comment: content })
+      //  .then(displayComments);
       db.collection("comments")
-        .insertOne({ comment: content })
+        .updateOne({ _id: ObjectId.parse(content) }, { $set: {checked_emo : true} })
         .then(displayComments);
      });
       
