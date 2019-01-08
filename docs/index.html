@@ -68,7 +68,7 @@
       var result = db.collection("comments").find({}, {});
       //console.log(result.toArray());
       result.toArray()
-            .then(funtion(result){
+            .then(function(result){
                   console.log(result)
       });
       callback(result);
