@@ -65,9 +65,8 @@
       //result = await result;
             
       //dont forget .toArray
-      var result = db.collection("comments").find({}, {})
-        .then(
-        console.log(result));
+      var result = db.collection("comments").find({}, {});
+      console.log(result));
       //db.collection("comments")
       //  .insertOne({ owner_id : client.auth.user.id, comment: content })
       //  .then(displayComments);
