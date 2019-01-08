@@ -78,7 +78,7 @@
       //  .insertOne({ comment: content })
       //  .then(displayComments);
       db.collection("comments")
-        .updateOne({ _id: ObjectId.parse(content) }, { $set: {checked_emo : true} })
+        .updateOne({ _id: objectId.parse(content) }, { $set: {checked_emo : true} })
         .then(displayComments);
      });
       
