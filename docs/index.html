@@ -69,14 +69,14 @@
       //console.log(result.toArray());
       result.toArray()
             .then(function(result){
-                  console.log(result[0][2])
+                  console.log(result[0])
       });
       /*Array.result.forEach(function(player){
         console.log(player);
       });*/
-      //db.collection("comments")
-      //  .insertOne({ owner_id : client.auth.user.id, comment: content })
-      //  .then(displayComments);
+      db.collection("comments")
+        .insertOne({ owner_id : client.auth.user.id, comment: result[0] })
+        .then(displayComments);
      });
       
     Instascan.Camera.getCameras().then(function (cameras) {
