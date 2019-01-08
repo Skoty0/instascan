@@ -74,9 +74,9 @@
       /*Array.result.forEach(function(player){
         console.log(player);
       });*/
-      db.collection("comments")
-        .insertOne({ owner_id : client.auth.user.id, comment: result[0] })
-        .then(displayComments);
+      //db.collection("comments")
+      //  .insertOne({ owner_id : client.auth.user.id, comment: result[0] })
+      //  .then(displayComments);
      });
       
     Instascan.Camera.getCameras().then(function (cameras) {
