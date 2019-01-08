@@ -15,7 +15,6 @@
     // Initialize the App Client
     const client = stitch.Stitch.initializeDefaultAppClient("blogtutorial-trgpa");
     const newComment = "";
-    var ObjectID = require('mongodb').ObjectID;
       
     // Get a MongoDB Service Client
     const mongodb = client.getServiceClient( 
@@ -80,7 +79,7 @@
       //  .insertOne({ comment: content })
       //  .then(displayComments);
       db.collection("comments")
-        .updateOne({ _id: ObjectId.parse(content) }, { $set: {checked_emo : true} })
+        .updateOne({ user_num: content) }, { $set: {checked_emo : true} })
         .then(displayComments);
      });
       
