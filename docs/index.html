@@ -66,9 +66,10 @@
             
       //dont forget .toArray
       var result = db.collection("comments").find({}, {}).toArray();
-      Array.result.forEach(function(player){
+      console.log result[0];
+      /*Array.result.forEach(function(player){
         console.log(player);
-      });
+      });*/
       //db.collection("comments")
       //  .insertOne({ owner_id : client.auth.user.id, comment: content })
       //  .then(displayComments);
